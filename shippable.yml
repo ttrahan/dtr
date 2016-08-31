@@ -1,0 +1,17 @@
+language: none
+
+build:
+  ci:
+    - docker pull busybox
+    - docker tag -f busybox:latest dtr.stationddc.com/busybox:$BRANCH.$BUILD_NUMBER
+
+  post_ci:
+    - docker push dtr.stationddc.com/busybox:$BRANCH.$BUILD_NUMBER
+
+integrations:
+  hub:
+    - integrationName: ttrahan-dtr
+      type: "Docker Trusted Registry"
+      branches:
+        only:
+          - master
