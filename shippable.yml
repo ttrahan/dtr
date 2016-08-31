@@ -10,7 +10,7 @@ build:
 
 integrations:
   hub:
-    - integrationName: ttrahan-dtr
+    - integrationName: dtr
       type: "Docker Trusted Registry"
       branches:
         only:
