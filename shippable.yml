@@ -3,7 +3,7 @@ language: none
 build:
   ci:
     - docker pull busybox
-    - docker tag -f busybox:latest dtr.stationddc.com/busybox:$BRANCH.$BUILD_NUMBER
+    - docker tag -f busybox:latest dtr.stationddc.com/admin/busybox:$BRANCH.$BUILD_NUMBER
 
   post_ci:
     - docker push dtr.stationddc.com/admin/busybox:$BRANCH.$BUILD_NUMBER
